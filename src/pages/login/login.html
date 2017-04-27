@@ -1,23 +1,19 @@
 <ion-content class="fondo-amarillo">
     <ion-card>
-        <ion-card-header>
-            Bienvenido
-        </ion-card-header>
         <ion-card-content>
             <ion-list no-line>
                 <ion-item>
-                    <img src="../assets/logo-login.png" alt="Quinua Smart">
+                    <img src="assets/logo-login.png" alt="Quinua Smart">
                 </ion-item>
                 <ion-item>
-                    <ion-input input="text" placeholder="Usuario"></ion-input>
+                    <ion-input input="text" placeholder="Usuario" id="usuario"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-input input="password" placeholder="Contraseña"></ion-input>
+                    <ion-input input="password" type="password" placeholder="Contraseña" id="contrasenia"></ion-input>
                 </ion-item>
             </ion-list>
-            <a>¿Olvidó su contraseña? <b>Haga click aquí</b></a>
+            <span id="olvido-contrasenia">¿Olvidó su contraseña?<a> <b>Haga click aquí</b></a></span>
             <button ion-button block outline color="light" id="btn-ingresar">Ingresar</button>
         </ion-card-content>
     </ion-card>
-    <button ion-button clear full  color="light">Crear Usuario</button>
 </ion-content>

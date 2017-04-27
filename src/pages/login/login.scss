@@ -1,7 +1,11 @@
 page-login {
+    justify-content: center;
         .fondo-amarillo { background-color: map-get($colors, amarillo-quinua);}    
         ion-card-header {text-align: center; }
         ion-item {margin-bottom: 10px; }
         #btn-ingresar{background:map-get($colors, rojo-quinua); color: #FFF; padding-top: 20px; padding-bottom: 20px; }
         #btn-ingresar:hover{ background: #b60001 }
+        .scroll-content{display:flex; flex-direction: column; justify-content: center;}
+        #olvido-contrasenia{color: #343434; padding-top: 15px; margin-bottom: 15px; position: relative; float: left;}
+        .card-header-md{font-size: 1.8rem;}
 }
