@@ -1,3 +1,7 @@
 page-login {
-
+        .fondo-amarillo { background-color: map-get($colors, amarillo-quinua);}    
+        ion-card-header {text-align: center; }
+        ion-item {margin-bottom: 10px; }
+        #btn-ingresar{background:map-get($colors, rojo-quinua); color: #FFF; padding-top: 20px; padding-bottom: 20px; }
+        #btn-ingresar:hover{ background: #b60001 }
 }
