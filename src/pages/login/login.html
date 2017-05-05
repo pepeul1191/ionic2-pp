@@ -7,10 +7,10 @@
                         <img src="assets/logo-login.png" alt="Quinua Smart">
                     </ion-item>
                     <ion-item>
-                        <ion-input input="text"  id="usuario" placeholder="{{placeholder_usuario}}" formControlName="usuario"></ion-input>
+                        <ion-input input="text"  id="usuario" placeholder="{{placeholder_usuario}}" formControlName="usuario" [(ngModel)]="usuario"></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input input="password" type="password" formControlName="contrasenia"  id="contrasenia" placeholder="{{placeholder_contrasenia}}"></ion-input>
+                        <ion-input input="password" type="password" formControlName="contrasenia"  id="contrasenia" placeholder="{{placeholder_contrasenia}}" [(ngModel)]="contrasenia"></ion-input>
                     </ion-item>
                 </form>
             </ion-list>

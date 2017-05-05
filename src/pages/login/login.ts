@@ -35,9 +35,17 @@ export class LoginPage {
   public validar(usuario, contrasenia){
      let headers = new Headers();
      headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+
      var x = "quinua";
      var y = "smart"; 
-     var params  = "usuario=" + x + "&contrasenia=" + y;
+     //var params  = "usuario=" + x + "&contrasenia=" + y;
+     var params  = "usuario=" + usuario + "&contrasenia=" +contrasenia;
+
+     var body = JSON.stringify({
+        usuario: usuario,
+        contrasenia: contrasenia
+    });
+
      this.http.post("http://localhost:3000/login", params, {headers : headers}).map(res => res.json()).subscribe(data => {
         console.log(data);
      });
