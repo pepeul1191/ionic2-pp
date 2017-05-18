@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Http, Headers } from '@angular/http';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the Login page.
@@ -38,7 +39,11 @@ export class LoginPage {
      var params  = "usuario=" + usuario + "&contrasenia=" +contrasenia;
 
      this.http.post("http://localhost:2000/login", params, {headers : headers}).map(res => res.json()).subscribe(data => {
-        console.log(data);
+        if(data["mensaje"][0] == 1){
+          this.navCtrl.push(HomePage);
+        }else{
+          
+        }
      });
   }
 
