@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Http, Headers } from '@angular/http';
 import { HomePage } from '../home/home';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the Login page.
@@ -20,7 +21,7 @@ export class LoginPage {
     placeholder_usuario : string;
     placeholder_contrasenia : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public http:Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public http:Http, private toastCtrl: ToastController) {
       this.placeholder_usuario = "Usuario";
       this.placeholder_contrasenia ="Contraseña";
       this.loginForm = formBuilder.group({
@@ -42,7 +43,17 @@ export class LoginPage {
         if(data["mensaje"][0] == 1){
           this.navCtrl.push(HomePage);
         }else{
-          
+          let toast = this.toastCtrl.create({
+            message: 'Usuario y/o contraseña no válidos',
+            duration: 3000,
+            position: 'middle'
+          });
+
+          toast.onDidDismiss(() => {
+            console.log('Dismissed toast');
+          });
+
+          toast.present();
         }
      });
   }
