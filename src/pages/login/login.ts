@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Http, Headers } from '@angular/http';
 import { HomePage } from '../home/home';
-import { ToastController } from 'ionic-angular';
+import { ModalContrasenia } from '../modal-contrasenia/modal-contrasenia';
+import { ToastController, ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the Login page.
@@ -21,7 +22,7 @@ export class LoginPage {
     placeholder_usuario : string;
     placeholder_contrasenia : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public http:Http, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public http:Http, private toastCtrl: ToastController, public modalCtrl: ModalController) {
       this.placeholder_usuario = "Usuario";
       this.placeholder_contrasenia ="Contraseña";
       this.loginForm = formBuilder.group({
@@ -56,6 +57,11 @@ export class LoginPage {
           toast.present();
         }
      });
+  }
+
+  public contraseniaEnvio(){
+      let modal = this.modalCtrl.create(ModalContrasenia, { userId: 8675309 });
+      modal.present();
   }
 
 }

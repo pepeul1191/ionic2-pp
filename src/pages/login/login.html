@@ -14,7 +14,7 @@
                     </ion-item>
                 </form>
             </ion-list>
-            <span id="olvido-contrasenia">¿Olvidó su contraseña?<a> <b>Presione aquí</b></a></span>
+            <span id="olvido-contrasenia">¿Olvidó su contraseña?<a (click)="contraseniaEnvio()"> <b>Presione aquí</b></a></span>
             <button ion-button block outline color="light" id="btn-ingresar" (click)="validar(usuario, contrasenia)">Ingresar</button>
         </ion-card-content>
     </ion-card>

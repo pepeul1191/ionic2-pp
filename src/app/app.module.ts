@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
 import { LoginPage } from '../pages/login/login';
+import { ModalContrasenia } from '../pages/modal-contrasenia/modal-contrasenia';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -22,7 +23,8 @@ import { Auth } from '../providers/auth';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ModalContrasenia,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { Auth } from '../providers/auth';
     ContactPage,
     HomePage,
     LoginPage,
+    ModalContrasenia,
     TabsPage
   ],
   providers: [
